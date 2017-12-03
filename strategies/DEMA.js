@@ -14,6 +14,8 @@ method.init = function() {
 
   // define the indicators we need
   this.addIndicator('dema', 'DEMA', this.settings);
+  this.addIndicator('shortEMA', 'EMA', this.settings.short);
+  this.addIndicator('longEMA', 'EMA', this.settings.long);
 }
 
 // what happens on every new candle?

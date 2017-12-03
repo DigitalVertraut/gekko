@@ -15,6 +15,7 @@ var method = {};
 
 // prepare everything our method needs
 method.init = function() {
+
   // keep state about the current trend
   // here, on every new candle we use this
   // state object to check if we need to
@@ -32,6 +33,10 @@ method.init = function() {
 
   // define the indicators we need
   this.addIndicator('macd', 'MACD', this.settings);
+  this.addIndicator('shortEMA', 'EMA', this.settings.short);
+  this.addIndicator('longEMA', 'EMA', this.settings.long);
+  this.addIndicator('signalEMA', 'EMA', this.settings.signal);
+  
 }
 
 // what happens on every new candle?

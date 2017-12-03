@@ -5,11 +5,12 @@
     config-builder(v-on:config='check')
     div(v-if='backtestable')
       .txt--center
-        a.w100--s.my1.btn--primary(href='#', v-if='backtestState !== "fetching"', v-on:click.prevent='run') Backtest
+        a.w100--s.my1.btn--blue(href='#', v-if='backtestState !== "fetching"', v-on:click.prevent='run') Backtest
         div(v-if='backtestState === "fetching"').scan-btn
           p Running backtest..
           spinner
-    result(v-if='backtestResult && backtestState === "fetched"', :result='backtestResult')
+    div.result-wrapper
+      result(v-if='backtestResult && backtestState === "fetched"', :result='backtestResult', :config='config')
 </template>
 
 <script>
@@ -43,7 +44,7 @@ export default {
       const req = {
         gekkoConfig: this.config,
         data: {
-          candleProps: ['close', 'start'],
+          candleProps: ['close', 'start', 'open', 'high', 'low', 'volume'],
           indicatorResults: true,
           report: true,
           roundtrips: true,
@@ -67,7 +68,7 @@ export default {
 
 <style>
 .contain {
-  max-width: 900px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }

@@ -6,3 +6,8 @@ signal = 9
 down = -0.025
 up = 0.025
 persistence = 1
+
+[chart.indicatorColors]
+shortEMA = "orange"
+longEMA = "green"
+signalEMA = "red"

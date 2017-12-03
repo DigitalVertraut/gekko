@@ -4,3 +4,11 @@ long = 21
 [thresholds]
 down = -0.025
 up = 0.025
+
+[chart.indicatorColors]
+shortEMA = "orange"
+longEMA  = "green"
+
+[chart.indicatorStyles]
+shortEMA = "stroke-opacity=0.8; "
+longEMA  = "stroke-opacity=0.8; "
